@@ -32,7 +32,7 @@
 <button id=20>Page 20</button>
 <button id=21>Page 21</button>
 <button id=22>Page 22</button><br>
-<button id="reload">Clean page</button>
+
 
 
 <p id="text"></p>
@@ -42,6 +42,7 @@
 
    function getNewPage(pageNumber) {
         let pokemons = [];
+        document.getElementById("text").innerHTML= "";
         fetch(`pokemon_formatter.php?page=${pageNumber}`)
             .then((response) => {
             // console.log(response);
@@ -50,22 +51,15 @@
             .then((data) => {
             console.log(data);
             pokemons = data;
+            // adding pokemons
             for(let i=0; i < 50; i++) {
-                document.getElementById("text").appendChild(document.createTextNode(` ${pokemons[i].name} ${pokemons[i].url} `)); 
-                // document.getElementById("text").innerHTML = pokemons[i].url; 
+                document.getElementById("text").appendChild(document.createTextNode(` ${pokemons[i].name} ${pokemons[i].url} `));  
             }
-            // pokemons.forEach(addPokemon);
+           
             });
-
-        // function addPokemon(pokemon) {
-        //     document.getElementById("text").innerHTML = pokemon.name;
-        // }
    }   
 
-   document.getElementById("reload").addEventListener('click', (e) => {
-    window.location.reload();
-   })
-        
+        // next button
         document.getElementById("next").addEventListener('click', (e) => {
             if (currentPage == 22) {
                 document.getElementById("next").disabled = true;
@@ -76,7 +70,7 @@
             }
             })
 
-            
+        //    previous button 
         document.getElementById("previous").addEventListener('click', (e) => {
             if (currentPage == 0) {
                 document.getElementById("previous").disabled = true;
@@ -88,6 +82,7 @@
           
             })
 
+            // numbered buttons
             for (let i = 0; i < 23; i++) {
                 document.getElementById(i).addEventListener('click', (e) => {
                    
@@ -95,16 +90,6 @@
                     getNewPage(currentPage);
                 })
             }
-
-        
-        
-        
-
-        
-   
-    // .catch(err => {
-    //         console.log("error has occurred" + err);
-    //     })
    
    </script> 
 </body>
