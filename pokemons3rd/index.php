@@ -35,7 +35,10 @@
 
 
 
-<p id="text"></p>
+<div id="text">
+    <div class="pokemon_name"></div>
+    <div class="pokemon_url"></div>
+</div>
 
    <script>
    let currentPage = 0;
@@ -53,7 +56,11 @@
             pokemons = data;
             // adding pokemons
             for(let i=0; i < 50; i++) {
-                document.getElementById("text").appendChild(document.createTextNode(` ${pokemons[i].name} ${pokemons[i].url} `));  
+                const newPokemon = document.createElement('div');
+                newPokemon.className = "pokemon_name";
+                newPokemon.innerText = ` ${pokemons[i].name} ${pokemons[i].url}  `;
+                document.getElementById("text").appendChild(newPokemon);
+                // document.getElementById("text").appendChild(document.createTextNode(` ${pokemons[i].name} ${pokemons[i].url} `));  
             }
            
             });
