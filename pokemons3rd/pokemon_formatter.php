@@ -15,7 +15,7 @@
     $chunks = (array_chunk($formatted_results, 50));
 
     if ($_SERVER['REQUEST_METHOD']==='POST') {
-        if (!in_array($_POST['name'], $formatted_results) && !in_array($_POST['id'], $formatted_results)) {
+        if (!in_array($_POST['name'], $formatted_data['results']) && !in_array($_POST['id'], $formatted_data['results'])) {
         $new_pokemons = array(
             "name" => $_POST['name'],
             "url" => $_POST['type'],

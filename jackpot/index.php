@@ -24,7 +24,7 @@
         if ( $counter == 5) {
             echo "Congrats, you won Jakpot! your winning probability was " . 1 / 2**5;
         } else if ( $zeroCounter == 5){
-            echo "Congrats, you had  five zeros and that's hard as well!";
+            echo "Congrats, you had  five zeros and that's hard as well!symfony";
         } else {
             echo "Sorry no win";
         }

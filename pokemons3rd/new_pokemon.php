@@ -9,13 +9,13 @@
 <body>
 <h1>Make your own Pokemon</h1>
 <form method="POST" action="pokemon_formatter.php">
-<label for="id">Give id</label>
+<label for="id">Give id</label><br>
 <input type="text" id="id" name="id"></input><br>
 
-<label for="name">Give name</label>
+<label for="name">Give name</label><br>
 <input type="text" id="name" name="name"></input><br>
 
-<label for="type">Select type</label>
+<label for="type">Select type</label><br>
 <select id="type" name="type">
 <option value="Normal">Normal</option>
 <option value="Fighting">Fighting</option>

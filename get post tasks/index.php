@@ -31,7 +31,7 @@ switch($request_method) {
         remove_recipe();
         break;
     default:
-        echo json_encode(array('message'=> 'an error has occurres'));
+        echo json_encode(array('message'=> 'an error has occurred'));
         break;
 }
 
@@ -50,8 +50,8 @@ switch($request_method) {
         "ingredients" => $_POST['ingredients'],
         "difficulty" => $_POST['difficulty']
      );
-     array_push($data, $new_recipes);
-     $json_formatted_data= json_encode($data);
+     array_push($data[recipes], $new_recipe);
+     $json_formatted_data= json_encode($data[recipes]);
      $new_recipe_to_file= file_put_contents('data.json', $json_formatted_data);
  }
 
@@ -63,8 +63,8 @@ switch($request_method) {
            "ingredients" => $_POST['ingredients'],
            "difficulty" => $_POST['difficulty']
         );
-        array_push($data, $new_recipe);
-        $json_formatted_data= json_encode($data);
+        array_push($params, $new_recipe);
+        $json_formatted_data= json_encode($params);
         $new_recipe_to_file= file_put_contents('data.json', $json_formatted_data);
      }
  }

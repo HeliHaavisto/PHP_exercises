@@ -33,7 +33,7 @@
 <button id=21>Page 21</button>
 <button id=22>Page 22</button><br>
 
-
+<a href="./new_pokemon.php">Add new Pokemon</a>
 
 <div id="text">
     <div class="pokemon_name"></div>
